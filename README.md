@@ -1,11 +1,11 @@
 # Installation
-`npm install codefishstudio/use-state-machine`
+`npm install @damocodefish/use-state-machine`
 
 ---
 
 # Basic Usage
 ```javascript
-import useStateMachine, {useOnState} from 'use-state-machine';
+import useStateMachine, {useOnState} from '@damocodefish/use-state-machine';
 
 const STATES = {
     DEFAULT: 'DEFAULT',
@@ -106,7 +106,7 @@ State can either be required values or you can provide a function for comparing.
 This library provides some default compare functions
 
 ```javascript
-import {StateType} from 'use-state-machine';
+import {StateType} from '@damocodefish/use-state-machine';
 
 const customCompare = (array) => (val) => {
     return array.reduce((acc, cur) => {
