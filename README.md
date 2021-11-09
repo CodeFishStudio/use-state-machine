@@ -105,7 +105,7 @@ State can either be required values or you can provide a function for comparing.
 
 This library provides some default compare functions
 
-```
+```javascript
 import {StateType} from 'codefishstudio/use-state-machine';
 
 const customCompare = (array) => (val) => {
