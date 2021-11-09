@@ -1,0 +1,22 @@
+{
+  "name": "use-state-machine",
+  "version": "1.0.0",
+  "description": "React State Machine Hook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeFishStudio/use-state-machine.git"
+  },
+  "author": "Damo Salmon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeFishStudio/use-state-machine/issues"
+  },
+  "homepage": "https://github.com/CodeFishStudio/use-state-machine#readme",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
