@@ -1,5 +1,11 @@
+# Installation
+`npm install codefishstudio/use-state-machine`
+
+---
+
+# Basic Usage
 ```javascript
-import useStateMachine, {useOnState} from '../index.js';
+import useStateMachine, {useOnState} from 'codefishstudio/use-state-machine';
 
 const STATES = {
     DEFAULT: 'DEFAULT',
@@ -89,4 +95,34 @@ const App = () => {
             setHasConnected(false);
         },1000);
     }, currentState, [STATE.RECONNECTING]);
+```
+
+---
+
+# Helper Methods
+
+State can either be required values or you can provide a function for comparing.
+
+This library provides some default compare functions
+
+```
+import {StateType} from 'codefishstudio/use-state-machine';
+
+const customCompare = (array) => (val) => {
+    return array.reduce((acc, cur) => {
+        if (acc) return acc;
+        if (val.includes(cur)) return true;
+        return false;
+    }, false);
+};
+
+const MyState = {
+    firstName: StateTypes.NotNull,
+    lastName: StateTypes.NotEqual('SwearWord'),
+    middleName: StateTypes.NotAny(["BadWord1", "BadWord2", "BadWord3"]),
+    age: StateTypes.GreaterThan(17),
+    money: StateTypes.LessThan(5000),
+    status: StateTypes.Any(['Connected', 'Loaded']),
+    someArray: customCompare(['A', 'B', 'C']), 
+};
 ```
