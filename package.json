@@ -1,6 +1,6 @@
 {
   "name": "@damocodefish/use-state-machine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React State Machine Hook",
   "main": "index.js",
   "scripts": {
