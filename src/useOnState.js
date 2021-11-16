@@ -1,4 +1,4 @@
-import {useMemo, useEffect, useState, useRef} from 'react';
+import {useEffect, useState, useRef} from 'react';
 
 /**
 * Fires when state changes to any of the supplied states
@@ -21,8 +21,15 @@ export const useOnState = (cb, state, states) => {
     }, [state, states]);
 
     useEffect(() => {
+        let ret = null;
         if (isActive && callback.current) {
-            callback.current();
+            ret = callback.current();
         }
+
+        return () => {
+            if (ret !== null && typeof ret === 'function') {
+                ret();
+            }
+        };
     }, [isActive]);
 };
